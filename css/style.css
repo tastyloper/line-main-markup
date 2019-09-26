@@ -1,0 +1,428 @@
+@charset "utf-8";
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+@import url("fontello.css");
+@import url("normalize.css");
+
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 기본 스타일 */
+html {
+  font-size: 10px;
+}
+body {
+  color: #181818;
+  font-size: 1.4rem;
+  font-family: "Spoqa Han Sans", sans-serif;
+  font-weight: 400;
+  background: #FFF;
+}
+/* 링크 스타일 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+/* 플로트 이슈를 해결하기 위한 CSS 모듈 */
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+/* 숨김 콘텐츠 */
+.readable-hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+}
+/* dropdown */
+.dropdown {
+  position: relative;
+  font-size: 1.5rem;
+}
+.dropdown-btn {
+  position: relative;
+  min-width: 130px;
+  padding: 10px 20px;
+  color: #8D8D8D;
+  text-align: left;
+  background-color: #FFF;
+  border: 1px solid #C8C8C8;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.dropdown-btn:before {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%); /* IE 9 */
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.dropdown.up .dropdown-btn:before {
+  -webkit-transform: translateY(-50%) rotate(-180deg); /* Chrome, Safari, Opera */
+  -moz-transform: translateY(-50%) rotate(-180deg);
+  -ms-transform: translateY(-50%) rotate(-180deg); /* IE 9 */
+  -o-transform: translateY(-50%) rotate(-180deg);
+  transform: translateY(-50%) rotate(-180deg);
+}
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #8D8D8D;
+  border: 1px solid #C8C8C8;
+  border-radius: 20px;
+  background-color: #FFF;
+}
+.dropdown.up .dropdown-list {
+  top: auto;
+  bottom: 0;
+}
+.dropdown-act .dropdown-list {
+  display: block;
+}
+.dropdown-list li {
+  margin-bottom: 5px;
+}
+.dropdown-list li a {
+  display: block;
+  padding: 1px 20px;
+}
+/* 컨테이너 */
+.container {
+  padding-top: 90px;
+  background-color: #FFF;
+}
+.header, .news-room, .quick-links, .footer {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* 헤더 */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: rgba(255, 255, 255, .95);
+}
+.header {
+  position: relative;
+  height: 90px;
+}
+/* 로고 */
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%); /* IE 9 */
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.logo img {
+  display: block;
+  width: 70px;
+}
+/* 언어 버튼 */
+.language {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%); /* Chrome, Safari, Opera */
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%); /* IE 9 */
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* 네비게이션 */
+.navigation {
+  padding-left: 20.2rem;
+}
+.menu {
+  display: inline-block;
+  width: 870px;
+}
+.menu-item {
+  display: inline-block;
+  position: relative;
+  padding: 0 2.5rem;
+}
+.menu-item a:hover,
+.menu-item a:focus {
+  color: #00B900;
+}
+.menu-item::after {
+  content: "";
+  position: fixed;
+  top: 90px;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  height: 0;
+  background-color: rgba(240, 240, 240, 0.95);
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.menu-item.menu-act::after {
+  height: 84px;
+}
+.menu-item:first-child.menu-act::after {
+  height: 181px;
+}
+.menu-item-text {
+  display: block;
+  padding: 3.15rem 0;
+  font-size: 1.8rem;
+}
+.sub-menu {
+  overflow: hidden;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  height: 0;
+  -webkit-transform: translateX(-50%); /* Chrome, Safari, Opera */
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%); /* IE 9 */
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+.menu-item.menu-act .sub-menu {
+  height: auto;
+  padding: 3rem 0;
+}
+.sub-menu-item {
+  display: inline-block;
+  position: relative;
+  margin: 0 8px;
+  font-size: 1.6rem;
+  vertical-align: text-top;
+  white-space: nowrap;
+}
+.sub-sub-menu {
+  position: relative;
+  padding-top: 1rem;
+}
+.sub-sub-menu li {
+  margin-bottom: 5px;
+  color: #838383;
+}
+.sitemap {
+  float: right;
+}
+.sitemap a {
+  color: #ADADAD;
+  text-transform: uppercase;
+}
+/* 라인의 사명 */
+.mission {
+  overflow: hidden;
+  position: relative;
+  height: 610px;
+}
+.mission-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translateX(-50%) translateY(-50%); /* Chrome, Safari, Opera */
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%); /* IE 9 */
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  width: 1920px;
+  height: 1080px;
+}
+.mission-layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  padding-top: 240px;
+  text-align: center;
+}
+.mission-text {
+  margin-bottom: 4rem;
+  color: #FFF;
+  font-size: 5.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.mission-link {
+  padding: 8px 15px 8px 23px;
+  color: #FFF;
+  font-size: 1.8rem;
+  font-weight: 300;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 22px;
+} 
+/* news room */
+.news-room {
+  position: relative;
+  padding: 6.9rem 0;
+}
+.news-room-title {
+  margin-bottom: 2.5rem;
+  font-size: 3.6rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.news-list li {
+  float: left;
+  width: 530px;
+  margin-bottom: 2.5rem;
+}
+.news-list li:nth-child(2n) {
+  float: right;
+}
+.news-list li a {
+  display: block;
+}
+.news-tilte {
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+.news-date, .news-category {
+  color: #00B900;
+  font-size: 1.3rem;
+}
+.news-category {
+  position: relative;
+  margin-left: 1.2rem;
+}
+.news-category::after {
+  content: "|";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  color: #E5E5E5;
+}
+.more-btn {
+  position: absolute;
+  top: 8rem;
+  right: 0;
+  color: #838383;
+}
+/* 바로가기 링크 모음 */
+.quick-links-bg {
+  background-color: #F9F9F9;
+}
+.quick-links {
+  padding: 52px 0 44px;
+}
+.quick-link-item {
+  float: left;
+  width: 25%;
+  padding: 0 30px;
+}
+.quick-link-item:nth-child(2) {
+  padding-left: 0;
+}
+.quick-link-item:last-child {
+  padding-right: 0;
+}
+.quick-link-item-subject {
+  margin-bottom: 13px;
+  color: #191919;
+  font-size: 2rem;
+  font-weight: 500;
+}
+.quick-link-item-brief {
+  color: #ADADAD;
+  font-size: 1.5rem;
+  word-break: keep-all;
+}
+.footer {
+  padding: 40px 0;
+}
+.copyright {
+  display: inline-block;
+  padding-right: 10px;
+}
+.site-info-list {
+  display: inline-block;
+}
+.site-info-list li {
+  display: inline-block;
+  position: relative;
+  padding: 0 10px;
+}
+.site-info-list li:not(:last-child)::after {
+  content: "|";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  color: #666;
+}
+.footer .dropdown {
+  position: relative;
+  top: -10px;
+  float: right;
+}
+.footer .dropdown-btn {
+  width: 218px;
+}
